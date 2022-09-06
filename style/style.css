@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+span {
+    color: bisque;
+    font-size: 50px;
+}
+
+.game-area {
+    background-color: black;
+    padding: 57px 0;
+}
+
+.container {
+    background-color: bisque;
+    width: 800px;
+    height: 765px;
+    position: relative;
+}
+
+.hero {
+    max-width: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.game-timer {
+    display: flex;
+}
