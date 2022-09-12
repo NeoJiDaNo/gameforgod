@@ -8,26 +8,45 @@ const heroA = () => {
     window.onkeydown = (e) => {
         if (e.keyCode == 37) {
             // влево
-            render(posX, posY)
-            posX = posX - 5
+                posX = posX - 5
             hero.style.left = posX + 'px'
+            if (posX <= 0) {
+                hero.style.left = 0 + 'px'
+                posX = 0
+            }
+            render()
         } else if (e.keyCode == 38) {
             // вверх
-            render(posX, posY)
-            posY = posY - 5
+                posY = posY - 5
             hero.style.top = posY + 'px'
+            if (posY <= 0) {
+                hero.style.top = 0 + 'px'
+                posY = 0
+            }
+            render()
         } else if (e.keyCode == 39) {
             // вправо
-            render(posX, posY)
-            posX = posX + 5
+                posX = posX + 5
             hero.style.left = posX + 'px'
+            if (posX >= 700) {
+                hero.style.left = 700 + 'px'
+                posX = 700
+            }
+            render()
         } else if (e.keyCode == 40) {
             // вниз
-            render(posX, posY)
-            posY = posY + 5
+                posY = posY + 5
             hero.style.top = posY + 'px'
+            if (posY >= 700) {
+                hero.style.top = 700 + 'px'
+                posY = 700
+            }
+            render()
         }
     }
+
+    
+
 }
 
 export default heroA

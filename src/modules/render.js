@@ -1,23 +1,36 @@
-// import heroA from './heroAbilities'
-const render = (posX, posY) => {
+
+const render = () => {
 
 const hero = document.querySelector('#hero')
+const rune = document.querySelector('.rune')
 
-    if (posX < 0) {
-        hero.style.left = 700 + 'px'
-        posX = 700
-    } else if (posX > 700) {
-        hero.style.left = 0 + 'px'
-        posX = 0
-    } else if (posY < 0) {
-        hero.style.top = 700 + 'px'
-        posY = 700
-    } else if (posY > 700) {
-        hero.style.top = 0 + 'px'
-        posY = 0
-    }
+function getCoords(elem) { // Функция получения координат нужного нам элемента (верх, право и лево)
+    var box = elem.getBoundingClientRect();
 
-    // heroA(posX, posY)
+    return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset,
+        right: box.right + pageXOffset,
+        bottom: box.bottom + pageYOffset
+    };
+}
+
+let rr = getCoords(rune).right
+let rl = getCoords(rune).left
+let rt = getCoords(rune).top
+let rb = getCoords(rune).bottom
+
+let hr = getCoords(hero).right
+let hl = getCoords(hero).left
+let ht = getCoords(hero).top
+let hb = getCoords(hero).bottom
+
+if (hr > rl && hr < rr) {
+    console.log('kk');
+} else if (hl < rl && hl > rr) {
+    console.log('kk');
+}
+
 }
 
 export default render

@@ -33,3 +33,12 @@ span {
 .game-timer {
     display: flex;
 }
+
+.number-zone {
+    display: flex;
+}
+
+.rune {
+    position: absolute;
+    width: 30px;
+}
